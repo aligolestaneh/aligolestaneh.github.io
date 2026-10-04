@@ -115,8 +115,8 @@ export const teachingExperience: TimelineItem[] = [
 ];
 
 export const awards = [
-  { title: "Best Student Paper Award", organization: "IEEE International Conference on Robotics and Automation (ICRA)", year: "2026", detail: "For ActivePusher." },
-  { title: "Best Student Paper Award", organization: "Hellenic Robotics Forum (HRF)", year: "2026" },
+  { title: "Best Student Paper Award · ICRA 2026", organization: "IEEE International Conference on Robotics and Automation (ICRA)", year: "2026", detail: "For ActivePusher." },
+  { title: "Best Student Paper Award · HRF 2026", organization: "Hellenic Robotics Forum (HRF)", year: "2026" },
   { title: "Glenn Yee Travel Award", organization: "Robotics Engineering Graduate Student · WPI", year: "2026" },
   { title: "Top 10% among Mechanical Engineering students", organization: "Iran University of Science and Technology", year: "2022" },
   { title: "Top 0.75% in the National University Entrance Exam", organization: "Iran · 144,437 participants", year: "2018" },
@@ -176,7 +176,7 @@ export const publications: Publication[] = [
     authors: ["Zhuoyun Zhong", "Seyedali Golestaneh", "Constantinos Chamzas"],
     venue: "IEEE International Conference on Robotics and Automation (ICRA)",
     year: 2026,
-    status: "Best Student Paper Award",
+    status: "ICRA 2026 Best Student Paper Award",
     description: "Combines residual-physics dynamics, uncertainty-aware active learning, and kinodynamic planning for planar pushing.",
     arxiv: "https://arxiv.org/abs/2506.04646",
     code: "https://github.com/elpis-lab/ActivePusher",
@@ -201,8 +201,8 @@ export const publications: Publication[] = [
 export const news: NewsItem[] = [
   { date: "September 2026", title: "AURA accepted to IEEE Robotics and Automation Letters", text: "The work studies uncertainty-robust replanning for kinodynamic systems.", href: "https://arxiv.org/abs/2605.27699", linkLabel: "Paper" },
   { date: "September 2026", title: "MetaPusher preprint posted to arXiv", text: "Online adaptation and planning for manipulation of unseen objects.", href: "https://arxiv.org/abs/2609.21122", linkLabel: "Preprint" },
-  { date: "2026", title: "ActivePusher receives the ICRA Best Student Paper Award", text: "The paper combines active learning, residual physics, and planning for nonprehensile manipulation.", href: "https://arxiv.org/abs/2506.04646", linkLabel: "Paper" },
-  { date: "2026", title: "Best Student Paper Award at the Hellenic Robotics Forum" },
+  { date: "2026", title: "ActivePusher receives the ICRA 2026 Best Student Paper Award", text: "The paper combines active learning, residual physics, and planning for nonprehensile manipulation.", href: "https://arxiv.org/abs/2506.04646", linkLabel: "Paper" },
+  { date: "2026", title: "Received the HRF 2026 Best Student Paper Award at the Hellenic Robotics Forum" },
   { date: "2026", title: "Received the Glenn Yee Travel Award", text: "Robotics Engineering Graduate Student travel award at WPI." },
   { date: "May 2026", title: "Terminal Matters preprint posted to arXiv", text: "Kinodynamic planning with terminal costs and learned uncertainty.", href: "https://arxiv.org/abs/2605.09046", linkLabel: "Preprint" }
 ];
