@@ -113,11 +113,6 @@ p { color: var(--muted); }
 .profile-photo { margin: 0; padding: 8px; border: 1px solid var(--border); border-radius: 14px; background: var(--surface); box-shadow: var(--shadow); }
 .profile-photo img { width: 100%; height: 265px; object-fit: cover; object-position: center 28%; border-radius: 8px; background: var(--surface-alt); }
 .profile-photo figcaption { padding: 8px 2px 0; color: var(--muted); font-size: 11px; }
-.about-summary { display: grid; grid-template-columns: minmax(210px, .8fr) minmax(0, 1.5fr); gap: 55px; }
-.about-summary h2 { max-width: 340px; font-size: clamp(1.55rem, 3vw, 2rem); }
-.about-summary p { margin-bottom: 13px; }
-.tag-list { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 17px; }
-.tag { display: inline-flex; padding: 4px 9px; border-radius: 999px; background: var(--surface-alt); color: var(--purple-strong); font-size: 11px; font-weight: 620; }
 .path-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
 .path-column > h3 { margin-bottom: 13px; font-size: 15px; }
 .path-item { position: relative; padding: 0 0 18px 15px; border-left: 1px solid var(--border); }
@@ -220,7 +215,6 @@ p { color: var(--muted); }
   .desktop-nav { gap: 17px; }
   .profile-hero { grid-template-columns: minmax(0, 1fr) 210px; gap: 30px; }
   .profile-photo img { height: 235px; }
-  .about-summary { gap: 30px; }
 }
 @media (max-width: 650px) {
   .container { width: calc(100% - 34px); }
@@ -234,8 +228,6 @@ p { color: var(--muted); }
   .hero-actions { gap: 7px; margin-top: 18px; }
   .button { min-height: 38px; padding: 7px 10px; font-size: 12px; }
   .content-section { padding-block: 31px; }
-  .about-summary { grid-template-columns: 1fr; gap: 0; }
-  .about-summary h2 { max-width: 500px; }
   .path-grid { grid-template-columns: 1fr; gap: 27px; }
   .award-list { grid-template-columns: 1fr; }
   .section-heading { align-items: start; }

@@ -3,7 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import LinkButton from "../components/LinkButton.astro";
 import NewsList from "../components/NewsList.astro";
 import PublicationCard from "../components/PublicationCard.astro";
-import { site, education, experience, news, awards, interests, publications } from "../data/site";
+import { site, education, experience, news, awards, publications } from "../data/site";
 const featuredPublications = publications.filter((publication) => ["metapusher", "aura", "activepusher"].includes(publication.id));
 ---
 <BaseLayout title="About Me" description="Ali Golestaneh is a robotics researcher at Worcester Polytechnic Institute working on motion planning, robot learning, and manipulation under uncertainty.">
@@ -23,11 +23,6 @@ const featuredPublications = publications.filter((publication) => ["metapusher",
         </div>
       </div>
       <figure class="profile-photo"><img src={site.portrait} alt={site.portraitAlt} width="600" height="780" fetchpriority="high" decoding="async"/><figcaption>Worcester Polytechnic Institute · ELPIS Lab</figcaption></figure>
-    </section>
-
-    <section class="content-section about-summary" aria-labelledby="about-heading">
-      <div><p class="eyebrow">About</p><h2 id="about-heading">Researching how robots plan and adapt.</h2></div>
-      <div><p>{site.about}</p><div class="tag-list">{interests.map((interest) => <span class="tag">{interest}</span>)}</div></div>
     </section>
 
     <section class="content-section home-feature-section" aria-labelledby="home-publications-heading">

@@ -68,7 +68,7 @@ Open the preview URL printed in the terminal. If `pnpm dev` is already using the
 3. Find the section described below, edit its text, and save the file.
 4. If the local site is running, it will refresh automatically. Check the change in your browser before publishing it.
 
-For news updates, you will edit the `news` array. For the short hero bio and the About paragraph, you will edit `site.introduction` and `site.about` in the same file.
+For news updates, edit the `news` array. The homepage uses one short research introduction beside your name; edit `site.introduction` in the same file.
 
 ### Run the site locally
 
@@ -127,21 +127,18 @@ Replace the example wording and URL with verified information before using this 
 - Keep `text` to one concise sentence. The title should still make sense if a visitor only skims it.
 - To edit an item, change its fields. To remove one, delete its entire `{ ... }` record and leave commas between the remaining records.
 
-## Change About Me text
+## Change the homepage introduction
 
 Open `src/data/site.ts` and edit the `site` object:
 
 | Field | Where it appears |
 | --- | --- |
-| `introduction` | Short text beside your name in the homepage hero |
-| `about` | Longer paragraph in the About section below the hero |
+| `introduction` | One concise research sentence beside your name in the homepage hero |
 | `role` | Structured profile information used by search engines |
 | `affiliation` | Lab and institution text used in site data |
 | `email` | Contact links around the site |
 | `scholarUrl`, `githubUrl`, `linkedinUrl` | Professional profile buttons and footer links |
 | `portrait`, `portraitAlt` | Homepage photo URL and its accessible description |
-
-The About section headline, **“Researching how robots plan and adapt,”** is written directly in `src/pages/index.astro`. You can change that heading there. The robotics-interest tags below the paragraph are the `interests` array in `src/data/site.ts`; add, edit, or remove quoted items in that array.
 
 Page titles and short descriptions for search and social previews are passed to `BaseLayout` near the top of each page file. For example, the About Me title and description are in `src/pages/index.astro`; News is in `src/pages/news.astro`; Publications is in `src/pages/publications.astro`; and Services is in `src/pages/services.astro`. Keep descriptions accurate and to a sentence or two.
 
@@ -306,7 +303,7 @@ In the repository's **Settings → Pages**, confirm that GitHub Actions is the s
 
 | Path | What it controls |
 | --- | --- |
-| `src/data/site.ts` | Profile text and URLs, research interests, education, experience, teaching, awards, publications, and news |
+| `src/data/site.ts` | Profile text and URLs, education, experience, teaching, awards, publications, and news |
 | `src/pages/index.astro` | About Me page layout, section headings, homepage publication selection, and homepage news count |
 | `src/pages/news.astro` | Full News page layout and its page description |
 | `src/pages/publications.astro` | Searchable/filterable Publications page |

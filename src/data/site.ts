@@ -42,22 +42,13 @@ export const site = {
   url: "https://aligolestaneh.com",
   portrait: "https://elpislab.org/assets/img/people/Ali.jpg",
   portraitAlt: "Ali Golestaneh, Robotics Ph.D. student at Worcester Polytechnic Institute",
-  introduction: "I work on motion planning and manipulation for robots that must act with uncertain models and changing conditions. My research combines kinodynamic planning, robot learning, and online adaptation, with a focus on nonprehensile manipulation.",
-  about: "I am a Robotics Engineering Ph.D. student and research assistant at Worcester Polytechnic Institute, where I work with the ELPIS Lab. My current work studies how robots can keep planning while they act, learn object dynamics through interaction, and adapt manipulation plans when predictions are uncertain. Before WPI, I studied mechanical engineering at Iran University of Science and Technology and worked on legged-robot simulation and control.",
+  introduction: "I study planning and manipulation for robots operating with uncertain, changing dynamics.",
   scholarUrl: "https://scholar.google.com/citations?user=OVpKMqwAAAAJ&hl=en",
   linkedinUrl: "https://www.linkedin.com/in/aligolestaneh",
   githubUrl: "https://github.com/aligolestaneh",
   labUrl: "https://elpislab.org/",
   wpiUrl: "https://www.wpi.edu/"
 };
-
-export const interests = [
-  "Motion and kinodynamic planning",
-  "Planning under uncertainty",
-  "Nonprehensile manipulation",
-  "Robot learning",
-  "Adaptive planning"
-];
 
 export const education: TimelineItem[] = [
   {
