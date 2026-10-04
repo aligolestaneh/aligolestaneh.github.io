@@ -135,10 +135,10 @@ export const publications: Publication[] = [
     venue: "arXiv preprint",
     year: 2026,
     status: "Preprint",
-    description: "Combines a meta-learned object-dynamics model with online adaptation and kinodynamic planning for pushing unseen objects.",
+    description: "Manipulating previously unseen objects is difficult because friction and mass distribution are hidden and cannot be recovered reliably from vision; models transferred across objects can therefore start with substantial error. MetaPusher uses cross-object meta-learning to initialize object dynamics, then updates that model from interaction while a push is underway. Its adaptive kinodynamic planner reuses and refines the search tree as dynamics change, allowing planning and learning to proceed together without a separate data-collection stage. Simulated and sim-to-real experiments on unseen objects compare the method with fine-tuning, active learning, MPPI, and reinforcement learning; the reported results show lower prediction error and up to 20% higher task success.",
     arxiv: "https://arxiv.org/abs/2609.21122",
     image: "/assets/papers/metapusher-fig1.webp",
-    imageAlt: "Figure 1 from MetaPusher showing the four-step method overview for adapting and planning pushes",
+    imageAlt: "MetaPusher method overview showing meta-training, deployment on a new object, prior knowledge, and online adaptation",
     bibtex: "@article{lee2026metapusher,\n  title={MetaPusher: Meta Learning and Planning for Nonprehensile Manipulation of Unseen Objects with Rapid Online Adaption},\n  author={Lee, Donghyung and Golestaneh, Seyedali and Singh, Jaskrit and Zhong, Zhuoyun and Kapoutsis, Athanasios and Chamzas, Constantinos},\n  journal={arXiv preprint arXiv:2609.21122},\n  year={2026}\n}"
   },
   {
@@ -148,12 +148,12 @@ export const publications: Publication[] = [
     venue: "IEEE Robotics and Automation Letters",
     year: 2026,
     status: "Accepted · Sep 2026",
-    description: "An online meta-planner continues global search and prepares recovery controls while a robot executes under motion uncertainty.",
+    description: "Sampling-based kinodynamic planners support high-dimensional, underactuated, and nonholonomic robots, but are generally used offline. During execution, motion uncertainty can drive a robot away from its planned trajectory. AURA is an asymptotically optimal meta-planner that continues exploring the state space and refining a trajectory online while optimizing future control inputs to reduce tracking error. This couples replanning with execution instead of waiting for a deviation before planning again. Simulated and real-world evaluations across multiple systems report improved trajectory quality, tracking accuracy, and overall performance compared with the evaluated baselines.",
     paper: "https://elpislab.org/assets/pdf/golestaneh2026aura.pdf",
     arxiv: "https://arxiv.org/abs/2605.27699",
     code: "https://github.com/elpis-lab/AURA",
     image: "/assets/papers/aura-fig1.webp",
-    imageAlt: "Figure 1 from AURA illustrating a robot pushing an object, an execution deviation, and replanned paths",
+    imageAlt: "AURA illustration of a robot pushing an object, an execution deviation, and replanned paths",
     bibtex: "@article{golestaneh2026aura,\n  title={AURA: Asymptotically Optimal Uncertainty-Robust Replanning Algorithm for Kinodynamic Systems},\n  author={Golestaneh, Seyedali and Zhong, Zhuoyun and Lee, Donghyung and Chamzas, Constantinos},\n  journal={IEEE Robotics and Automation Letters},\n  year={2026}\n}"
   },
   {
@@ -167,7 +167,7 @@ export const publications: Publication[] = [
     arxiv: "https://arxiv.org/abs/2605.09046",
     code: "https://github.com/elpis-lab/KiTe",
     image: "/assets/papers/kite-fig1.webp",
-    imageAlt: "Figure 1 from Terminal Matters (KiTe), showing planar pushing and car-parking examples",
+    imageAlt: "Terminal Matters (KiTe) examples of planar pushing and car parking",
     bibtex: "@article{zhong2026terminal,\n  title={Terminal Matters: Kinodynamic Planning with a Terminal Cost and Learned Uncertainty in Belief State-Cost Space},\n  author={Zhong, Zhuoyun and Golestaneh, Seyedali and Chamzas, Constantinos},\n  journal={arXiv preprint arXiv:2605.09046},\n  year={2026}\n}"
   },
   {
@@ -177,12 +177,12 @@ export const publications: Publication[] = [
     venue: "IEEE International Conference on Robotics and Automation (ICRA)",
     year: 2026,
     status: "ICRA 2026 Best Student Paper Award",
-    description: "Combines residual-physics dynamics, uncertainty-aware active learning, and kinodynamic planning for planar pushing.",
+    description: "Nonprehensile skills such as pushing and rolling can support versatile manipulation, but learning their dynamics from scratch is costly and random interaction can waste trials. ActivePusher combines a residual-physics dynamics model with uncertainty-aware active learning to select informative skill parameters for data collection. It then connects the learned model to kinodynamic planners, using uncertainty to bias control sampling toward reliable actions over long-horizon plans. Simulation and real-robot experiments evaluate learning efficiency and manipulation performance; compared with the evaluated baselines, the method uses interaction data more effectively and achieves higher planning success.",
     arxiv: "https://arxiv.org/abs/2506.04646",
     code: "https://github.com/elpis-lab/ActivePusher",
     video: "https://www.youtube.com/watch?v=lxvyy61g0CY",
     image: "/assets/papers/activepusher-fig1.webp",
-    imageAlt: "Figure 1 from ActivePusher introducing active learning and planning skills for nonprehensile manipulation",
+    imageAlt: "ActivePusher overview of active learning and planning for nonprehensile manipulation",
     bibtex: "@inproceedings{zhong2026activepusher,\n  title={ActivePusher: Active Learning and Planning with Residual Physics for Nonprehensile Manipulation},\n  author={Zhong, Zhuoyun and Golestaneh, Seyedali and Chamzas, Constantinos},\n  booktitle={2026 IEEE International Conference on Robotics and Automation (ICRA)},\n  year={2026}\n}"
   },
   {
@@ -206,4 +206,3 @@ export const news: NewsItem[] = [
   { date: "2026", title: "Received the Glenn Yee Travel Award", text: "Robotics Engineering Graduate Student travel award at WPI." },
   { date: "May 2026", title: "Terminal Matters preprint posted to arXiv", text: "Kinodynamic planning with terminal costs and learned uncertainty.", href: "https://arxiv.org/abs/2605.09046", linkLabel: "Preprint" }
 ];
-

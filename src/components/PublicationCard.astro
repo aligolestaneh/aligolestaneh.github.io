@@ -17,12 +17,11 @@ const isAward = publication.status?.toLowerCase().includes("best student paper a
     <div class="publication-content publication-content-compact">
       <h3>{target ? <a href={target} target="_blank" rel="noopener noreferrer">{publication.title}</a> : publication.title}</h3>
       {publication.image && target && <a class="publication-thumb" href={target} target="_blank" rel="noopener noreferrer" aria-label={"Open paper: " + publication.title}>
-        <img src={publication.image} alt={publication.imageAlt || "Figure 1 from " + publication.title} loading="lazy" decoding="async" />
-        <span>Figure 1</span>
+        <img src={publication.image} alt={publication.imageAlt || "Publication figure for " + publication.title} loading="lazy" decoding="async" />
       </a>}
-      <p class="publication-description">{publication.description}</p>
       <div class="publication-meta"><span>{publication.venue}</span><span aria-hidden="true">·</span><span>{publication.year}</span>{publication.status && <span class:list={["publication-status", isAward && "publication-status-award"]}>{publication.status}</span>}</div>
       <p class="authors">{publication.authors.map((author, index) => <>{index > 0 && <span>, </span>}{author.toLowerCase().includes("golestaneh") ? <strong>{author}</strong> : author}</>)}</p>
+      <p class="publication-description">{publication.description}</p>
       <div class="resource-row">
         {resources.map((resource) => <a href={resource.href} target="_blank" rel="noopener noreferrer">{resource.label}<span aria-hidden="true"> ↗</span></a>)}
         <details class="bibtex"><summary>BibTeX</summary><div class="bibtex-popover"><pre>{publication.bibtex}</pre><button class="copy-bibtex" type="button" data-bibtex={publication.bibtex}>Copy BibTeX</button></div></details>
@@ -31,8 +30,7 @@ const isAward = publication.status?.toLowerCase().includes("best student paper a
   ) : (
     <>
       {publication.image && target && <a class="publication-thumb" href={target} target="_blank" rel="noopener noreferrer" aria-label={"Open paper: " + publication.title}>
-        <img src={publication.image} alt={publication.imageAlt || "Figure 1 from " + publication.title} loading="lazy" decoding="async" />
-        <span>Figure 1</span>
+        <img src={publication.image} alt={publication.imageAlt || "Publication figure for " + publication.title} loading="lazy" decoding="async" />
       </a>}
       <div class="publication-content">
         <div class="publication-meta"><span>{publication.venue}</span><span aria-hidden="true">·</span><span>{publication.year}</span>{publication.status && <span class:list={["publication-status", isAward && "publication-status-award"]}>{publication.status}</span>}</div>
