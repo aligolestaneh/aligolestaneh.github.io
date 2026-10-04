@@ -1,0 +1,12 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageIntro from "../components/PageIntro.astro";
+import NewsList from "../components/NewsList.astro";
+import { news } from "../data/site";
+---
+<BaseLayout title="News" description="Research updates, publications, presentations, and awards from Ali Golestaneh.">
+  <div class="container news-page">
+    <PageIntro eyebrow="Updates" title="News" description="Recent research updates, paper announcements, and recognition." />
+    <NewsList items={news} />
+  </div>
+</BaseLayout>

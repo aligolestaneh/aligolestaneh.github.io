@@ -1,0 +1,17 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import LinkButton from "../components/LinkButton.astro";
+---
+
+<BaseLayout title="Page not found" description="The requested page could not be found.">
+  <section class="container page-intro">
+    <p class="eyebrow">404 · Page not found</p>
+    <h1>This page could not be found.</h1>
+    <p class="page-lede">The link may have changed. Start again from About Me or browse recent updates.</p>
+    <div class="hero-actions">
+      <LinkButton href="/" label="About Me" kind="primary" />
+      <LinkButton href="/news/" label="News" />
+      <LinkButton href="/publications/" label="Publications" />
+    </div>
+  </section>
+</BaseLayout>

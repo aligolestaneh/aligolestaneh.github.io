@@ -1,0 +1,56 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import LinkButton from "../components/LinkButton.astro";
+import NewsList from "../components/NewsList.astro";
+import PublicationCard from "../components/PublicationCard.astro";
+import { site, education, experience, news, awards, interests, publications } from "../data/site";
+const featuredPublications = publications.filter((publication) => ["metapusher", "aura", "activepusher"].includes(publication.id));
+---
+<BaseLayout title="About Me" description="Ali Golestaneh is a robotics researcher at Worcester Polytechnic Institute working on motion planning, robot learning, and manipulation under uncertainty.">
+  <div class="container about-page">
+    <section class="profile-hero" aria-labelledby="profile-name">
+      <div class="profile-copy">
+        <p class="eyebrow">Robotics Engineering · WPI ELPIS Lab</p>
+        <h1 id="profile-name">Ali Golestaneh</h1>
+        <p class="profile-role">Robotics researcher</p>
+        <p class="profile-topics">Motion planning · Robot learning · Nonprehensile manipulation</p>
+        <p class="profile-intro">{site.introduction}</p>
+        <div class="hero-actions">
+          <LinkButton href="/cv.pdf" label="Download CV" kind="primary" />
+          <LinkButton href={site.scholarUrl} label="Google Scholar" external={true} />
+          <LinkButton href={site.githubUrl} label="GitHub" external={true} />
+          <LinkButton href={site.linkedinUrl} label="LinkedIn" external={true} />
+        </div>
+      </div>
+      <figure class="profile-photo"><img src={site.portrait} alt={site.portraitAlt} width="600" height="780" fetchpriority="high" decoding="async"/><figcaption>Worcester Polytechnic Institute · ELPIS Lab</figcaption></figure>
+    </section>
+
+    <section class="content-section about-summary" aria-labelledby="about-heading">
+      <div><p class="eyebrow">About</p><h2 id="about-heading">Researching how robots plan and adapt.</h2></div>
+      <div><p>{site.about}</p><div class="tag-list">{interests.map((interest) => <span class="tag">{interest}</span>)}</div></div>
+    </section>
+
+    <section class="content-section home-feature-section" aria-labelledby="home-publications-heading">
+      <div class="section-heading compact-heading"><div><p class="eyebrow">Selected work</p><h2 id="home-publications-heading">Publications</h2></div><a class="text-link" href="/publications/">All publications <span aria-hidden="true">↗</span></a></div>
+      <div class="publication-list homepage-publications">{featuredPublications.map((publication) => <PublicationCard publication={publication} compact={true} />)}</div>
+    </section>
+
+    <section class="content-section news-section home-feature-section" aria-labelledby="news-heading">
+      <div class="section-heading compact-heading"><div><p class="eyebrow">Updates</p><h2 id="news-heading">News</h2></div><a class="text-link" href="/news/">View all news <span aria-hidden="true">↗</span></a></div>
+      <NewsList items={news.slice(0, 4)} />
+    </section>
+
+    <section class="content-section" aria-labelledby="path-heading">
+      <div class="section-heading compact-heading"><div><p class="eyebrow">Academic path</p><h2 id="path-heading">Education and research</h2></div><a class="text-link" href="/cv.pdf">Full CV PDF <span aria-hidden="true">↗</span></a></div>
+      <div class="path-grid">
+        <div class="path-column"><h3>Education</h3>{education.map((item) => <article class="path-item"><span class="path-period">{item.period}</span><h4>{item.title}</h4><p>{item.organization}</p>{item.detail && <small>{item.detail}</small>}</article>)}</div>
+        <div class="path-column"><h3>Research and professional experience</h3>{experience.map((item) => <article class="path-item"><span class="path-period">{item.period}</span><h4>{item.title}</h4><p>{item.organization}</p>{item.detail && <small>{item.detail}</small>}</article>)}</div>
+      </div>
+    </section>
+
+    <section class="content-section recognition-section" aria-labelledby="recognition-heading">
+      <div class="section-heading compact-heading"><div><p class="eyebrow">Selected recognition</p><h2 id="recognition-heading">Awards</h2></div></div>
+      <ul class="award-list">{awards.slice(0, 4).map((award) => <li><span class="award-year">{award.year}</span><span><strong class:list={[award.title.includes("Best Student Paper Award") && "award-title-gold"]}>{award.title}</strong><small>{award.organization}{award.detail ? ` · ${award.detail}` : ""}</small></span></li>)}</ul>
+    </section>
+  </div>
+</BaseLayout>

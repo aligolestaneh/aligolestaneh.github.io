@@ -1,0 +1,13 @@
+---
+import { site } from "../data/site";
+import SocialLinks from "./SocialLinks.astro";
+const year = new Date().getFullYear();
+---
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div><a class="footer-name" href="/">{site.name}</a><p>{site.affiliation}</p></div>
+    <a href={"mailto:" + site.email}>{site.email}</a>
+    <SocialLinks compact={false} />
+  </div>
+  <div class="container footer-bottom"><span>© {year} Ali Golestaneh</span><a href="#top">Back to top ↑</a></div>
+</footer>

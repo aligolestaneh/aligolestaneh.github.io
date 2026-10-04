@@ -1,0 +1,13 @@
+---
+const { href, label, kind = "outline", external = false } = Astro.props;
+---
+
+<a
+  class:list={["button", "button-" + kind]}
+  href={href}
+  target={external ? "_blank" : undefined}
+  rel={external ? "noopener noreferrer" : undefined}
+>
+  <span>{label}</span>
+  {external && <span class="external-mark" aria-hidden="true">↗</span>}
+</a>

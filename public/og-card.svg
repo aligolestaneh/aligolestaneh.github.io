@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#302543"/><stop offset="1" stop-color="#59427a"/></linearGradient>
+    <pattern id="p" width="34" height="34" patternUnits="userSpaceOnUse"><path d="M34 0H0v34" fill="none" stroke="#fff" stroke-opacity=".055"/></pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#g)"/><rect width="1200" height="630" fill="url(#p)"/>
+  <circle cx="1000" cy="145" r="210" fill="#d5b345" opacity=".09"/>
+  <path d="M775 452c91-58 132-145 222-123 65 16 84 67 142 24" fill="none" stroke="#d5b345" stroke-width="6" stroke-linecap="round"/>
+  <g fill="#e7ddf3" opacity=".7"><circle cx="794" cy="438" r="7"/><circle cx="866" cy="389" r="6"/><circle cx="945" cy="348" r="6"/><circle cx="1040" cy="372" r="6"/></g>
+  <circle cx="1139" cy="353" r="14" fill="#fff"/>
+  <text x="86" y="205" fill="#d6c9e7" font-family="Arial,sans-serif" font-size="21" letter-spacing="5">ROBOTICS · PLANNING · LEARNING</text>
+  <text x="82" y="310" fill="#fff" font-family="Arial,sans-serif" font-size="68" font-weight="700">Ali Golestaneh</text>
+  <text x="87" y="378" fill="#f0ecf5" font-family="Arial,sans-serif" font-size="27">Motion planning and manipulation under uncertainty</text>
+  <rect x="88" y="431" width="62" height="6" rx="3" fill="#e0bf4f"/>
+  <text x="88" y="492" fill="#d5cce1" font-family="Arial,sans-serif" font-size="19">Worcester Polytechnic Institute · ELPIS Lab</text>
+</svg>

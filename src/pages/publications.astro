@@ -1,0 +1,48 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageIntro from "../components/PageIntro.astro";
+import PublicationCard from "../components/PublicationCard.astro";
+import { publications } from "../data/site";
+const years = [...new Set(publications.map(({ year }) => year))].sort((a, b) => b - a);
+const schema = { "@context": "https://schema.org", "@graph": publications.map((paper) => ({
+  "@type": "ScholarlyArticle", headline: paper.title, datePublished: String(paper.year),
+  author: paper.authors.map((name) => ({ "@type": "Person", name })),
+  isPartOf: { "@type": "Periodical", name: paper.venue },
+  url: paper.arxiv || paper.doi || paper.paper || "https://aligolestaneh.com/publications/"
+})) };
+---
+<BaseLayout title="Publications" description="Robotics publications by Ali Golestaneh on planning, learning, manipulation, and legged-robot state estimation." schema={schema}>
+  <div class="container">
+    <PageIntro eyebrow="Publications" title="Publications" description="Papers and preprints in robotics planning, learning, manipulation, and legged systems. Ali’s name is highlighted in each author list." />
+    <div class="publication-controls" role="search">
+      <div class="control-field"><label for="publication-search">Search</label><input id="publication-search" type="search" placeholder="Title, author, topic…" autocomplete="off" /></div>
+      <div class="control-field"><label for="year-filter">Year</label><select id="year-filter"><option value="">All years</option>{years.map((year) => <option value={year}>{year}</option>)}</select></div>
+      <p class="result-count" id="result-count" aria-live="polite">{publications.length} publications</p>
+    </div>
+    <div class="publication-list" id="publication-list">
+      {publications.map((publication) => <div class="publication-filter-item" data-year={publication.year} data-search={(publication.title + " " + publication.authors.join(" ") + " " + publication.description + " " + publication.venue).toLowerCase()}><PublicationCard publication={publication} /></div>)}
+    </div>
+    <p class="empty-state" id="empty-state" hidden>No publications match. Try a different search or year.</p>
+  </div>
+  <script>
+    const search = document.querySelector<HTMLInputElement>("#publication-search");
+    const year = document.querySelector<HTMLSelectElement>("#year-filter");
+    const entries = Array.from(document.querySelectorAll<HTMLElement>(".publication-filter-item"));
+    const count = document.querySelector<HTMLElement>("#result-count");
+    const empty = document.querySelector<HTMLElement>("#empty-state");
+    const filter = () => {
+      const query = (search?.value || "").trim().toLowerCase();
+      const selectedYear = year?.value || "";
+      let visible = 0;
+      entries.forEach((entry) => {
+        const show = (!query || (entry.dataset.search || "").includes(query)) && (!selectedYear || entry.dataset.year === selectedYear);
+        entry.hidden = !show;
+        if (show) visible += 1;
+      });
+      if (count) count.textContent = `${visible} publication${visible === 1 ? "" : "s"}`;
+      if (empty) empty.hidden = visible > 0;
+    };
+    search?.addEventListener("input", filter);
+    year?.addEventListener("change", filter);
+  </script>
+</BaseLayout>

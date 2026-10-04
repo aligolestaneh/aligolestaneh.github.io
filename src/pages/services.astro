@@ -1,0 +1,19 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageIntro from "../components/PageIntro.astro";
+import { teachingExperience } from "../data/site";
+---
+<BaseLayout title="Services" description="Teaching and academic service by Ali Golestaneh.">
+  <div class="container teaching-page services-page">
+    <PageIntro eyebrow="Academic service" title="Services" description="Teaching and peer-review service." />
+    <section class="service-section" aria-labelledby="teaching-heading">
+      <div class="section-heading compact-heading"><div><p class="eyebrow">Teaching</p><h2 id="teaching-heading">Teaching experience</h2></div></div>
+      <ol class="teaching-list">{teachingExperience.map((item) => <li class="teaching-item"><span class="service-period">{item.period}</span><div><h3>{item.title}</h3><p>{item.organization}</p></div></li>)}</ol>
+      <p class="teaching-note">Course and appointment names and dates are transcribed from my resume.</p>
+    </section>
+    <section class="service-section review-section" aria-labelledby="review-heading">
+      <div class="section-heading compact-heading"><div><p class="eyebrow">Scholarly service</p><h2 id="review-heading">Paper review</h2></div></div>
+      <p>Peer-review service. Venue names and service years can be added here once confirmed.</p>
+    </section>
+  </div>
+</BaseLayout>

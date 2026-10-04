@@ -1,0 +1,8 @@
+---
+import type { NewsItem } from "../data/site";
+interface Props { items: NewsItem[]; }
+const { items } = Astro.props;
+---
+<ol class="news-list">
+  {items.map((item) => <li class="news-item"><time class="news-date">{item.date}</time><span class="news-marker" aria-hidden="true"></span><div class="news-copy"><h3>{item.title}</h3>{item.text && <p>{item.text}</p>}{item.href && <a href={item.href} target="_blank" rel="noopener noreferrer">{item.linkLabel || "Details"}<span aria-hidden="true"> ↗</span></a>}</div></li>)}
+</ol>
