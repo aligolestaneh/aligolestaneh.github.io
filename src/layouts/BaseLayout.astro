@@ -5,8 +5,8 @@ import Footer from "../components/Footer.astro";
 import { site } from "../data/site";
 
 const {
-  title = site.name + " · Robotics Researcher",
-  description = "Ali Golestaneh is a robotics researcher at Worcester Polytechnic Institute working on motion planning, robot learning, and nonprehensile manipulation.",
+  title = site.name + " · Robotics Engineering Ph.D. Student",
+  description = "Ali Golestaneh is a Robotics Engineering Ph.D. Student at Worcester Polytechnic Institute working on motion planning, robot learning, and nonprehensile manipulation.",
   path = Astro.url.pathname,
   schema = null
 } = Astro.props;
@@ -40,7 +40,7 @@ const baseSchema = {
     <meta name="author" content={site.name} />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href={canonical} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon-robot.svg" />
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="theme-color" content="#302543" />
     <meta property="og:type" content="website" />
@@ -51,7 +51,7 @@ const baseSchema = {
     <meta property="og:image" content={new URL("/og-card.png", site.url).toString()} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Ali Golestaneh — robotics researcher in motion planning, robot learning, and manipulation" />
+    <meta property="og:image:alt" content="Ali Golestaneh — Robotics Engineering Ph.D. Student in motion planning, robot learning, and manipulation" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={description} />

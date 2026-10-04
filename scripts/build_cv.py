@@ -57,7 +57,7 @@ def header(canvas, doc):
     canvas.drawString(.58 * inch, height - .46 * inch, "Ali Golestaneh")
     canvas.setFont("Helvetica", 8.2)
     canvas.setFillColor(colors.HexColor("#e4dced"))
-    canvas.drawString(.6 * inch, height - .70 * inch, "Robotics researcher · Ph.D. student at Worcester Polytechnic Institute")
+    canvas.drawString(.6 * inch, height - .70 * inch, "Robotics Engineering Ph.D. Student · Ph.D. student at Worcester Polytechnic Institute")
     canvas.setFont("Helvetica", 7)
     canvas.setFillColor(colors.HexColor("#f3eef8"))
     canvas.drawRightString(width - .58 * inch, height - .43 * inch, "sgolestaneh@wpi.edu")

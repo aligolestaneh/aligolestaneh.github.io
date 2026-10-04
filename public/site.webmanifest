@@ -1,9 +1,9 @@
 {
-  "name": "Ali Golestaneh · Robotics Research",
+  "name": "Ali Golestaneh · Robotics Ph.D. Student",
   "short_name": "Ali Golestaneh",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#fbfafd",
   "theme_color": "#302543",
-  "icons": [{ "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
+  "icons": [{ "src": "/favicon-robot.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
 }

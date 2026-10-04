@@ -6,13 +6,13 @@ import PublicationCard from "../components/PublicationCard.astro";
 import { site, education, experience, news, awards, publications } from "../data/site";
 const featuredPublications = publications.filter((publication) => ["metapusher", "aura", "activepusher"].includes(publication.id));
 ---
-<BaseLayout title="About Me" description="Ali Golestaneh is a robotics researcher at Worcester Polytechnic Institute working on motion planning, robot learning, and manipulation under uncertainty.">
+<BaseLayout title={site.name} description="Ali Golestaneh is a Robotics Engineering Ph.D. Student at Worcester Polytechnic Institute working on motion planning, robot learning, and manipulation under uncertainty.">
   <div class="container about-page">
     <section class="profile-hero" aria-labelledby="profile-name">
       <div class="profile-copy">
         <p class="eyebrow">Robotics Engineering · WPI ELPIS Lab</p>
         <h1 id="profile-name">Ali Golestaneh</h1>
-        <p class="profile-role">Robotics researcher</p>
+        <p class="profile-role">Robotics Engineering Ph.D. Student</p>
         <p class="profile-topics">Motion planning · Robot learning · Nonprehensile manipulation</p>
         <p class="profile-intro">{site.introduction}</p>
         <div class="hero-actions">

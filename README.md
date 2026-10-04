@@ -140,7 +140,7 @@ Open `src/data/site.ts` and edit the `site` object:
 | `scholarUrl`, `githubUrl`, `linkedinUrl` | Professional profile buttons and footer links |
 | `portrait`, `portraitAlt` | Homepage photo URL and its accessible description |
 
-Page titles and short descriptions for search and social previews are passed to `BaseLayout` near the top of each page file. For example, the About Me title and description are in `src/pages/index.astro`; News is in `src/pages/news.astro`; Publications is in `src/pages/publications.astro`; and Services is in `src/pages/services.astro`. Keep descriptions accurate and to a sentence or two.
+Page titles and short descriptions for search and social previews are passed to `BaseLayout` near the top of each page file. The homepage browser-tab title is your name in `src/pages/index.astro`. The browser icon is `public/favicon-robot.svg`, also referenced by `src/layouts/BaseLayout.astro` and `public/site.webmanifest`. News is in `src/pages/news.astro`; Publications is in `src/pages/publications.astro`; and Services is in `src/pages/services.astro`. Keep descriptions accurate and to a sentence or two.
 
 ## Update education, experience, and awards
 
@@ -226,7 +226,7 @@ The download button expects `public/cv.pdf`. To replace the file, put your updat
 - **Colors, typography, spacing, responsive behavior, dark mode:** `src/styles/global.css`. The theme colors are CSS variables near the top of the file, including separate light and dark palettes. The browser saves the manual light/dark selection.
 - **Shared page layout, canonical URLs, metadata, and person schema:** `src/layouts/BaseLayout.astro`.
 - **Social links in the footer:** the shared site data in `src/data/site.ts` and the markup in `src/components/SocialLinks.astro` / `src/components/Footer.astro`.
-- **Logo card and browser icon:** files under `public/`, including `og-card.svg`, `og-card.png`, and `favicon.svg`.
+- **Logo card and browser icon:** files under `public/`, including `og-card.svg`, `og-card.png`, and `favicon-robot.svg`.
 
 For normal biography or news edits, you should not need to change Astro components or CSS.
 
