@@ -218,7 +218,7 @@ Change the URLs in the `site` object in `src/data/site.ts`. The `portrait` field
 
 ### CV PDF
 
-The download button expects `public/cv.pdf`. To replace the file, put your updated PDF at that exact path and keep the filename `cv.pdf`; the existing download button will then serve it. The generated PDF source is `scripts/build_cv.py`. That script contains the CV text and will overwrite `public/cv.pdf` when run, so update the script too if you use it to regenerate the document. It requires Python and ReportLab.
+The Download CV button serves `public/cv.pdf` directly. This is the original resume PDF you supplied. To update it later, replace that file with your new PDF and keep the filename `cv.pdf`; the site will serve your file as-is.
 
 ## Change design or navigation
 
@@ -316,7 +316,6 @@ In the repository's **Settings → Pages**, confirm that GitHub Actions is the s
 | `public/assets/papers/` | Optimized publication images used by the website |
 | `assets/source-paper-figures/` | Full-resolution source paper figures |
 | `public/cv.pdf` | Downloadable CV shown on the site |
-| `scripts/build_cv.py` | Source used to generate the downloadable CV PDF |
 | `.github/workflows/deploy.yml` | Automatic GitHub Pages deployment workflow |
 
 ## Content sources

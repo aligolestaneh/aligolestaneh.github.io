@@ -42,7 +42,7 @@ export const site = {
   url: "https://aligolestaneh.com",
   portrait: "https://elpislab.org/assets/img/people/Ali.jpg",
   portraitAlt: "Ali Golestaneh, Robotics Ph.D. student at Worcester Polytechnic Institute",
-  introduction: "I study planning and manipulation for robots operating with uncertain, changing dynamics.",
+  introduction: "I study motion and kinodynamic planning for robot manipulation under uncertainty, including learning object dynamics and adapting plans as conditions change.",
   scholarUrl: "https://scholar.google.com/citations?user=OVpKMqwAAAAJ&hl=en",
   linkedinUrl: "https://www.linkedin.com/in/aligolestaneh",
   githubUrl: "https://github.com/aligolestaneh",
