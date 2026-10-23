@@ -168,6 +168,7 @@ p { color: var(--muted); }
 .publication-content h3 a:hover { color: var(--purple); }
 .authors { margin: 0 0 6px; color: var(--muted); font-size: 11px; line-height: 1.5; }
 .authors strong { color: var(--ink); }
+.equal-contribution { display: block; font-size: 10px; }
 .publication-description { margin: 0 0 9px; font-size: 12px; line-height: 1.55; }
 .resource-row { display: flex; align-items: center; flex-wrap: wrap; gap: 6px 12px; }
 .resource-row > a, .bibtex summary { color: var(--purple); font-size: 11px; font-weight: 700; cursor: pointer; }

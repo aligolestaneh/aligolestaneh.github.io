@@ -184,7 +184,7 @@ export const publications: Publication[] = [
   {
     id: "metapusher",
     title: "MetaPusher: Meta Learning and Planning for Nonprehensile Manipulation of Unseen Objects with Rapid Online Adaption",
-    authors: ["Donghyung Lee", "Seyedali Golestaneh", "Jaskrit Singh", "Zhuoyun Zhong", "Athanasios Kapoutsis", "Constantinos Chamzas"],
+    authors: ["Donghyung Lee*", "Seyedali Golestaneh*", "Jaskrit Singh", "Zhuoyun Zhong", "Athanasios Kapoutsis", "Constantinos Chamzas"],
     venue: "arXiv preprint",
     year: 2026,
     status: "Preprint",
