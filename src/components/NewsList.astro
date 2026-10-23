@@ -1,8 +1,8 @@
 ---
-import type { NewsItem } from "../data/site";
-interface Props { items: NewsItem[]; }
-const { items } = Astro.props;
+import { linkPeople, type NewsItem } from "../data/site";
+interface Props { items: NewsItem[]; detailed?: boolean; }
+const { items, detailed = false } = Astro.props;
 ---
 <ol class="news-list">
-  {items.map((item) => <li class="news-item"><time class="news-date">{item.date}</time><span class="news-marker" aria-hidden="true"></span><div class="news-copy"><h3>{item.title}</h3>{item.text && <p>{item.text}</p>}{item.href && <a href={item.href} target="_blank" rel="noopener noreferrer">{item.linkLabel || "Details"}<span aria-hidden="true"> ↗</span></a>}</div></li>)}
+  {items.map((item) => <li class="news-item"><time class="news-date">{item.date}</time><span class="news-marker" aria-hidden="true"></span><div class="news-copy"><h3>{item.title}</h3>{detailed && (item.details || item.text) && <p>{linkPeople(item.details || item.text || "").map((part) => part.href ? <a href={part.href} target="_blank" rel="noopener noreferrer">{part.text}</a> : part.text)}</p>}{item.href && <a href={item.href} target="_blank" rel="noopener noreferrer">{item.linkLabel || "Details"}<span aria-hidden="true"> ↗</span></a>}</div></li>)}
 </ol>

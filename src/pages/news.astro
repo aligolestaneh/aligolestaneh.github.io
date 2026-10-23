@@ -6,7 +6,7 @@ import { news } from "../data/site";
 ---
 <BaseLayout title="News" description="Research updates, publications, presentations, and awards from Ali Golestaneh.">
   <div class="container news-page">
-    <PageIntro eyebrow="Updates" title="News" description="Recent research updates, paper announcements, and recognition." />
-    <NewsList items={news} />
+    <PageIntro title="News" />
+    <NewsList items={news} detailed={true} />
   </div>
 </BaseLayout>

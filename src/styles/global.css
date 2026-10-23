@@ -114,6 +114,7 @@ p { color: var(--muted); }
 .profile-photo img { width: 100%; height: 265px; object-fit: cover; object-position: center 28%; border-radius: 8px; background: var(--surface-alt); }
 .profile-photo figcaption { padding: 8px 2px 0; color: var(--muted); font-size: 11px; }
 .path-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.education-grid { grid-template-columns: repeat(3, 1fr); gap: 32px; }
 .path-column > h3 { margin-bottom: 13px; font-size: 15px; }
 .path-item { position: relative; padding: 0 0 18px 15px; border-left: 1px solid var(--border); }
 .path-item:last-child { padding-bottom: 0; }
@@ -148,7 +149,7 @@ p { color: var(--muted); }
 .news-page { padding-bottom: 58px; }
 .news-page .news-item { padding-bottom: 24px; }
 .news-copy p { margin: 0; font-size: 12px; }
-.news-copy a { display: inline-block; margin-top: 3px; font-size: 12px; font-weight: 650; }
+.news-copy > a { display: inline-block; margin-top: 3px; font-size: 12px; font-weight: 650; }
 
 /* Publications */
 .publication-list { display: grid; gap: 14px; padding-bottom: 55px; }
@@ -178,14 +179,6 @@ p { color: var(--muted); }
 .bibtex-popover { position: absolute; z-index: 5; right: 0; bottom: calc(100% + 8px); width: min(440px, 85vw); padding: 11px; border: 1px solid var(--border); border-radius: 9px; background: var(--surface); box-shadow: var(--shadow); }
 .bibtex pre { max-height: 180px; overflow: auto; margin: 0 0 9px; white-space: pre-wrap; color: var(--ink); font-size: 10px; }
 .copy-bibtex { padding: 5px 8px; border: 1px solid var(--border); border-radius: 6px; background: var(--surface-alt); color: var(--ink); cursor: pointer; font-size: 10px; }
-.publication-controls { display: flex; align-items: end; gap: 14px; padding: 14px; border: 1px solid var(--border); border-radius: 10px; background: var(--surface); }
-.control-field { display: grid; gap: 4px; }
-.control-field label { color: var(--muted); font-size: 11px; font-weight: 650; }
-.control-field input, .control-field select { min-height: 38px; min-width: 190px; padding: 7px 10px; border: 1px solid var(--border); border-radius: 7px; background: var(--canvas); color: var(--ink); font-size: 13px; }
-.result-count { margin: 0 0 8px auto; color: var(--muted); font-size: 12px; }
-.publication-filter-item[hidden], .empty-state[hidden] { display: none; }
-.empty-state { padding: 20px 0; }
-.publication-controls + .publication-list { margin-top: 15px; }
 
 /* Teaching page and footer */
 .teaching-page { min-height: 65vh; }
@@ -232,7 +225,7 @@ p { color: var(--muted); }
   .hero-actions { gap: 7px; margin-top: 18px; }
   .button { min-height: 38px; padding: 7px 10px; font-size: 12px; }
   .content-section { padding-block: 31px; }
-  .path-grid { grid-template-columns: 1fr; gap: 27px; }
+  .path-grid, .education-grid { grid-template-columns: 1fr; gap: 27px; }
   .award-list { grid-template-columns: 1fr; }
   .section-heading { align-items: start; }
   .publication-list:not(.homepage-publications) .publication-card { grid-template-columns: minmax(150px, 34%) minmax(0, 1fr); gap: 12px; padding: 11px; }
@@ -242,9 +235,6 @@ p { color: var(--muted); }
   .publication-list:not(.homepage-publications) .publication-thumb { min-height: 0; }
   .publication-content h3 { font-size: 13px; }
   .publication-description { font-size: 11px; }
-  .publication-controls { align-items: stretch; flex-direction: column; gap: 9px; }
-  .control-field input, .control-field select { min-width: 0; width: 100%; }
-  .result-count { margin: 0; }
   .teaching-item { grid-template-columns: 1fr; gap: 5px; padding: 14px 0; }
   .footer-inner { flex-wrap: wrap; }
   .footer-inner .social-links { width: 100%; }

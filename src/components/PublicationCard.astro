@@ -1,16 +1,16 @@
 ---
-import type { Publication } from "../data/site";
+import { people, type Publication } from "../data/site";
 interface Props { publication: Publication; compact?: boolean; }
 const { publication, compact = false } = Astro.props;
 const resources = [
   publication.paper ? { label: "Paper", href: publication.paper } : null,
+  publication.ieee ? { label: "IEEE", href: publication.ieee } : null,
   publication.arxiv ? { label: "arXiv", href: publication.arxiv } : null,
   publication.doi ? { label: "DOI", href: publication.doi } : null,
   publication.code ? { label: "Code", href: publication.code } : null,
   publication.video ? { label: "Video", href: publication.video } : null
 ].filter((resource): resource is { label: string; href: string } => resource !== null);
-const target = publication.arxiv || publication.paper || publication.doi;
-const isAward = publication.status?.toLowerCase().includes("best student paper award") ?? false;
+const target = publication.website || publication.arxiv || publication.paper || publication.doi;
 ---
 <article class:list={["publication-card", compact && "publication-card-compact", publication.image && "has-thumbnail"]}>
   {compact ? (
@@ -19,8 +19,8 @@ const isAward = publication.status?.toLowerCase().includes("best student paper a
       {publication.image && target && <a class="publication-thumb" href={target} target="_blank" rel="noopener noreferrer" aria-label={"Open paper: " + publication.title}>
         <img src={publication.image} alt={publication.imageAlt || "Publication figure for " + publication.title} loading="lazy" decoding="async" />
       </a>}
-      <div class="publication-meta"><span>{publication.venue}</span><span aria-hidden="true">·</span><span>{publication.year}</span>{publication.status && <span class:list={["publication-status", isAward && "publication-status-award"]}>{publication.status}</span>}</div>
-      <p class="authors">{publication.authors.map((author, index) => <>{index > 0 && <span>, </span>}{author.toLowerCase().includes("golestaneh") ? <strong>{author}</strong> : author}</>)}</p>
+      <div class="publication-meta"><span>{publication.venue}</span><span aria-hidden="true">·</span><span>{publication.year}</span>{publication.status && <span class="publication-status">{publication.status}</span>}{publication.awards?.map((award) => <span class="publication-status publication-status-award">{award}</span>)}</div>
+      <p class="authors">{publication.authors.map((author, index) => <>{index > 0 && <span>, </span>}{author.toLowerCase().includes("golestaneh") ? <strong>{author}</strong> : people[author] ? <a href={people[author]} target="_blank" rel="noopener noreferrer">{author}</a> : author}</>)}</p>
       <p class="publication-description">{publication.description}</p>
       <div class="resource-row">
         {resources.map((resource) => <a href={resource.href} target="_blank" rel="noopener noreferrer">{resource.label}<span aria-hidden="true"> ↗</span></a>)}
@@ -33,9 +33,9 @@ const isAward = publication.status?.toLowerCase().includes("best student paper a
         <img src={publication.image} alt={publication.imageAlt || "Publication figure for " + publication.title} loading="lazy" decoding="async" />
       </a>}
       <div class="publication-content">
-        <div class="publication-meta"><span>{publication.venue}</span><span aria-hidden="true">·</span><span>{publication.year}</span>{publication.status && <span class:list={["publication-status", isAward && "publication-status-award"]}>{publication.status}</span>}</div>
+        <div class="publication-meta"><span>{publication.venue}</span><span aria-hidden="true">·</span><span>{publication.year}</span>{publication.status && <span class="publication-status">{publication.status}</span>}{publication.awards?.map((award) => <span class="publication-status publication-status-award">{award}</span>)}</div>
         <h3>{target ? <a href={target} target="_blank" rel="noopener noreferrer">{publication.title}</a> : publication.title}</h3>
-        <p class="authors">{publication.authors.map((author, index) => <>{index > 0 && <span>, </span>}{author.toLowerCase().includes("golestaneh") ? <strong>{author}</strong> : author}</>)}</p>
+        <p class="authors">{publication.authors.map((author, index) => <>{index > 0 && <span>, </span>}{author.toLowerCase().includes("golestaneh") ? <strong>{author}</strong> : people[author] ? <a href={people[author]} target="_blank" rel="noopener noreferrer">{author}</a> : author}</>)}</p>
         <p class="publication-description">{publication.description}</p>
         <div class="resource-row">
           {resources.map((resource) => <a href={resource.href} target="_blank" rel="noopener noreferrer">{resource.label}<span aria-hidden="true"> ↗</span></a>)}
