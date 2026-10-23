@@ -191,7 +191,6 @@ p { color: var(--muted); }
 .teaching-item time, .teaching-item .service-period { padding-top: 3px; color: var(--accent); font-size: 12px; font-weight: 700; }
 .teaching-item h2, .teaching-item h3 { margin: 0 0 3px; font-size: 15px; letter-spacing: -.01em; }
 .teaching-item p { margin: 0; font-size: 13px; }
-.teaching-note { margin: -37px 0 50px; font-size: 11px; }
 .site-footer { border-top: 1px solid var(--border); background: var(--surface); }
 .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-block: 20px; }
 .footer-name { color: var(--purple-deep); font-weight: 740; font-size: 14px; }

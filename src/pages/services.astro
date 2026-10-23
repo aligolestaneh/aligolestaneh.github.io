@@ -9,7 +9,6 @@ import { teachingExperience, reviewing } from "../data/site";
     <section class="service-section" aria-labelledby="teaching-heading">
       <div class="section-heading compact-heading"><div><h2 id="teaching-heading">Teaching experience</h2></div></div>
       <ol class="teaching-list">{teachingExperience.map((item) => <li class="teaching-item"><span class="service-period">{item.period}</span><div><h3>{item.title}</h3><p>{item.organization}</p></div></li>)}</ol>
-      <p class="teaching-note">Course and appointment names and dates are transcribed from my resume.</p>
     </section>
     <section class="service-section review-section" aria-labelledby="review-heading">
       <div class="section-heading compact-heading"><div><h2 id="review-heading">Paper review</h2></div></div>
